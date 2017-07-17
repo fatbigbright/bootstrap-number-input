@@ -37,9 +37,12 @@
             var max = self.attr('max');
 
             function setText(n) {
-                if ((min && n < min) || (max && n > max)) {
-                    return false;
-                }
+                // if ((min && n < min) || (max && n > max)) {
+                //     return false;
+                // }
+
+                if(min && n < min) n = min;
+                else if(max && n > max) n = max;
 
                 clone.focus().val(n);
                 return true;
